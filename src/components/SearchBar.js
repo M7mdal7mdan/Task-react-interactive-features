@@ -2,10 +2,13 @@ import React from "react";
 // Styling
 
 
-const SearchBar = (props) => {
+const SearchBar = ({setQuery}) => {
+ 
+
+
   return (
     <input className="searchBar"
-      onChange={(event) => console.log(event.target.value)}
+      onChange={(event) => setQuery(event.target.value)}
       placeholder="Search for a cookie name"
     />
   );
