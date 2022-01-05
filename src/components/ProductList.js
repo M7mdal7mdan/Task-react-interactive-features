@@ -5,15 +5,15 @@ import SearchBar from "./SearchBar";
 import products from "../products";
 import React, { useState } from 'react';
 
-const ProductList = () => {
+const ProductList = ({setProduct}) => {
   const [query,setQuery]=useState("");
-
+ 
   const productList = products
   .filter((product)=>
   product.name.toLowerCase().includes(query.toLowerCase())
   )
   .map((product) => (
-    <ProductItem product={product} key={product.id} />
+    <ProductItem product={product} key={product.id} cookieSelected={setProduct} />
   ));
 
   return (
